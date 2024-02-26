@@ -16,15 +16,14 @@ window.onload = function() {
 
 
     // Inner html for substitution
-
     topSymbolElement.innerHTML = symbolArr[symbolIndex];
     bottomSymbolElement.innerHTML = symbolArr[symbolIndex];
     numberElement.innerHTML = numberArr[numberIndex]; 
 
     // Conditional rendering for smybol colors
     if (symbolArr[symbolIndex] === "♥" || symbolArr[symbolIndex] === "♦") {
-        topSymbolElement.style.color = "red";
-        bottomSymbolElement.style.color = "red";
+        const isRedSymbol = symbolArr[symbolIndex] === "♥" || symbolArr[symbolIndex] === "♦";
+        topSymbolElement.style.color = bottomSymbolElement.style.color = isRedSymbol ? "red" : "black";
     };
 
 };
