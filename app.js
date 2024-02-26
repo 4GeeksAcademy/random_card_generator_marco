@@ -1,6 +1,6 @@
-window.onload = function() {
-    console.log("JS Connected!");
+// Function for card generation
 
+function generateCard() {
     // Arrays for the cards
     const symbolArr = ["♦", "♥", "♠", "♣"];
     const numberArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K", "A"];
@@ -16,16 +16,24 @@ window.onload = function() {
 
 
     // Inner html for substitution
-    topSymbolElement.innerHTML = symbolArr[symbolIndex];
-    bottomSymbolElement.innerHTML = symbolArr[symbolIndex];
-    numberElement.innerHTML = numberArr[numberIndex]; 
+    let symbol = symbolArr[symbolIndex]; // Save the symbol value
 
-    // Conditional rendering for smybol colors
-    if (symbolArr[symbolIndex] === "♥" || symbolArr[symbolIndex] === "♦") {
-        const isRedSymbol = symbolArr[symbolIndex] === "♥" || symbolArr[symbolIndex] === "♦";
-        topSymbolElement.style.color = bottomSymbolElement.style.color = isRedSymbol ? "red" : "black";
+    topSymbolElement.innerHTML = symbol;
+    bottomSymbolElement.innerHTML = symbol;
+    numberElement.innerHTML = numberArr[numberIndex];
+
+    // Conditional rendering for symbol colors
+    const isRedSymbol = symbol === "♥" || symbol === "♦";
+    topSymbolElement.style.color = bottomSymbolElement.style.color = isRedSymbol ? "red" : "black";
     };
 
+
+window.onload = function() {
+    console.log("JS Connected!");
+    
+    generateCard();
+
+    document.getElementById("generateButton").addEventListener("click", generateCard);
 };
 
 
