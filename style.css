@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: green;
+}
+
+.card {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.top-symbol, .bottom-symbol {
+    font-size: 50px;
+}
+
+.top-symbol {
+    align-self: flex-start;
+}
+
+.bottom-symbol {
+    align-self: flex-end;
+}
+
+#card-number {
+    font-size: 80px;
+    font-weight: bold;
+}
